@@ -44,7 +44,7 @@ class Manager implements EventManagerAwareInterface
     public function __construct(EventManager $eventManager)
     {
         $this->setEventManager($eventManager);
-        $this->getEventManager()->getSharedManager()->attach('application', 'route', array($this, 'testRequestForAsset'), PHP_INT_MAX);
+        $this->getEventManager()->getSharedManager()->attach('Zend\Mvc\Application', 'route', array($this, 'testRequestForAsset'), PHP_INT_MAX);
     }
 
     /**
